@@ -1,1 +1,14 @@
-this is my website
+{% extends "thisishill/base.html" %}
+
+this is my website!
+
+{% load pipeline %}
+
+{% block js %}
+    {% javascript "d3" %}
+    <script src="{{ STATIC_URL }}site/js/landing.js"></script>
+{% endblock js %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}site/css/landing.css" />
+{% endblock css %}

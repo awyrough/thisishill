@@ -1,0 +1,36 @@
+{
+ "name": "root-node",
+ "color": "#00FFFF",
+ "size": 100000,
+ "children": [
+  {
+    "name": "education-node",
+    "size": 50000,
+    "color": "#FF0000",
+    "children": [
+      {
+        "name": "princeton-node"
+      },
+      {
+        "name": "horacemann-node"
+      }
+    ]
+  },
+  {
+    "name": "work-node",
+    "size": 100000,
+    "color": "#00FF00",
+    "children": [
+    {
+      "name": "liveintent-node"
+    },
+    {
+      "name": "yext-node"
+    },
+    {
+      "name": "donorschoose-node"
+    }
+   ]
+  }
+ ]
+}
