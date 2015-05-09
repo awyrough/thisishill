@@ -1,0 +1,1 @@
+WEB_CONCURRENCY=3 foreman start -p 8000 -c dev-web=1
