@@ -108,3 +108,106 @@ STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+# LOGGING
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+        'universal_formatter': {
+            'format': '%(name)s:%(levelname)s [%(filename)s]: %(message)s'
+        },
+        'user_formatter': {
+            'format': '%(name)s:%(levelname)s [USERNAME:%(user)s] [APP:%(app)s] [VIEW:%(view)s] [URL:%(path)s]'
+        },
+    },
+    'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler',
+        },
+        'console':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'universal_handler':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'universal_formatter'
+        },
+        'user_handler':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'user_formatter'
+        },
+    },
+    'loggers': {
+        # General purpose logging
+        'UNIVERSAL': {
+            'handlers': ['universal_handler'],
+            'propagate': False,
+            'level': 'INFO',
+        },
+        # Log user activities in view
+        'USER': {
+            'handlers': ['user_handler'],
+            'propagate': False,
+            'level': 'INFO',
+        },
+        # Log cache information
+        'CACHE': {
+            'handlers': ['universal_handler'],
+            'propagate': False,
+            'level': 'INFO',
+        },
+        # View logger to log out user
+        # Keep the Django DB quiet! (Remove this if you want to see DB logs)
+        'django.db.backends': {
+            'handlers': ['null'],
+            'propagate': False,
+            'level':'DEBUG',
+        },
+        'debug': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'apps': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        # Restrict Google API client logging
+        'googleapiclient.discovery': {
+            'handlers': ['console'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+        # Turn off stupid requests logging
+        'requests': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    }
+}
+
+if DEBUG:
+    LOGGING["loggers"]["gunicorn.access"] = {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+        'propagate': False,
+    }

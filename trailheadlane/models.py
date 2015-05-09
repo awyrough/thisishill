@@ -1,3 +1,11 @@
 from django.db import models
 
-# Create your models here.
+
+class Asset(models.Model):
+    """
+    FX Asset Model
+    """
+    name = models.TextField()
+    base_currency = models.TextField()
+    quote_currency = models.TextField()
+
