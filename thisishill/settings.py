@@ -122,10 +122,11 @@ STATICFILES_FINDERS = (
 from pipeline_settings import PIPELINE_ENABLED, PIPELINE_CSS, PIPELINE_JS
 
 # LOGGING
+CELERYD_LOG_FORMAT = "CELERY:%(levelname)s %(message)s"
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
     'formatters': {
         'verbose': {
             'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
@@ -211,7 +212,7 @@ LOGGING = {
         # Turn off stupid requests logging
         'requests': {
             'handlers': ['console'],
-            'level': 'INFO',
+            'level': 'WARNING',
             'propagate': False,
         },
     }
@@ -223,3 +224,13 @@ if DEBUG:
         'level': 'DEBUG',
         'propagate': False,
     }
+
+
+if DEBUG and not os.environ.get('ENVIRONMENT', False) == 'staging':
+    BROKER_URL = "amqp://localhost"
+    CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
+else:
+    BROKER_URL = os.environ["CLOUDAMQP_URL"]
+    BROKER_POOL_LIMIT = 10
+    CELERY_RESULT_BACKEND = os.environ["REDISCLOUD_URL"]
+CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']

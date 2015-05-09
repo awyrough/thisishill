@@ -1,1 +1,16 @@
-hello, world!
+{% extends "thisishill/base.html" %}
+
+{% block content %}
+    result: {{ result }}
+{% endblock content %}
+
+{% load pipeline %}
+
+{% block js %}
+    {% javascript "d3" %}
+    <script src="{{ STATIC_URL }}site/js/me.js"></script>
+{% endblock js %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}site/css/me.css" />
+{% endblock css %}
