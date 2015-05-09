@@ -232,5 +232,5 @@ if DEBUG and not os.environ.get('ENVIRONMENT', False) == 'staging':
 else:
     BROKER_URL = os.environ["CLOUDAMQP_URL"]
     BROKER_POOL_LIMIT = 10
-    CELERY_RESULT_BACKEND = os.environ["REDISCLOUD_URL"]
+    CELERY_RESULT_BACKEND = os.environ["REDISGREEN_URL"]
 CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
