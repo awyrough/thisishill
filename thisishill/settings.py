@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-from secret import SECRET_KEY
+from secret import SECRET_KEY  # noqa
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,6 +41,7 @@ INSTALLED_APPS = (
 
     # third party
     'pipeline',
+    'rest_framework',
 )
 
 PROJECT_APPS = (
@@ -69,7 +70,7 @@ WSGI_APPLICATION = 'thisishill.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'thisishill',
         'USER': 'thisishill',
         'PASSWORD': 'thisishill',
@@ -146,17 +147,17 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.NullHandler',
         },
-        'console':{
+        'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
-        'universal_handler':{
+        'universal_handler': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'universal_formatter'
         },
-        'user_handler':{
+        'user_handler': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'user_formatter'
@@ -186,7 +187,7 @@ LOGGING = {
         'django.db.backends': {
             'handlers': ['null'],
             'propagate': False,
-            'level':'DEBUG',
+            'level': 'DEBUG',
         },
         'debug': {
             'handlers': ['console'],

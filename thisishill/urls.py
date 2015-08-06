@@ -1,4 +1,6 @@
 from django.conf.urls import patterns, include, url
+from django.views.generic import RedirectView
+
 from django.contrib import admin
 
 import settings
@@ -16,6 +18,11 @@ urlpatterns = patterns("",
 
                        # define project app URLs
                        url(r"^projects/", include("trailheadlane.urls")),
+
+                       # API
+                       url(r"^api/v1/", include("api.urls")),
+                       url(r"^api/", RedirectView.as_view(url="/api/v1/")),
+
 
                        )
 

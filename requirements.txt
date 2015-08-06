@@ -5,11 +5,15 @@ celery==3.1.18
 dj-database-url==0.3.0
 Django==1.8.1
 django-extensions==1.5.3
+django-filter==0.10.0
 django-pipeline==1.5.0
 django-static==1.5.5
+djangorestframework==3.2.0
 futures==3.0.1
 gunicorn==19.3.0
+ipython==1.2.1
 kombu==3.0.26
+Markdown==2.6.2
 psycopg2==2.6
 pytz==2015.2
 redis==2.10.3
