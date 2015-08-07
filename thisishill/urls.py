@@ -9,6 +9,8 @@ admin.autodiscover()
 
 urlpatterns = patterns("",
                        url(r"^admin/", include(admin.site.urls)),
+                       url(r"^sign_in/$", "sign_in"),
+                       url(r"^sign_out/$", "sign_out"),
 
                        # main landing page / index
                        url(r"^$", "thisishill.views.landing", name="landing"),

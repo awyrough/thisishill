@@ -1,0 +1,40 @@
+{% load compressed %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Sign in</title>
+
+        <!-- Bootstrap core CSS -->
+        {% compressed_css "bootstrap" %}
+
+        <!-- Custom styles for this template -->
+        <link href="{{ STATIC_URL }}site/css/signin.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}lib/ubuntu_font.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            {% include "messages.html" %}
+            <form class="form-horizontal form-signin" role="form" method="post" action="">
+                {% csrf_token %}
+                <h2 class="form-signin-heading">hill<span class="accent"></h2>
+                <input name="username" type="text" class="form-control" placeholder="Username" autocomplete="off" required autofocus>
+                <input name="password" type="password" class="form-control" placeholder="Password" required>
+        <!--         <label class="checkbox">
+                  <input type="checkbox" value="remember-me"> Remember me
+                </label> -->
+                <input class="btn btn-lg btn-login" type="submit" value="Login">
+            </form>
+        </div> <!-- /container -->
+        {% compressed_js "jquery" %}
+        {% compressed_js "bootstrap" %}
+        <script type="text/javascript" src="{{ STATIC_URL }}site/js/sign_in.js"></script>
+    </body>
+</html>
