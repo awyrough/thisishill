@@ -228,13 +228,13 @@ if DEBUG:
     }
 
 
-if DEBUG and not os.environ.get('ENVIRONMENT', False) == 'staging':
-    BROKER_URL = "amqp://localhost"
-    CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
-else:
-    BROKER_URL = os.environ["CLOUDAMQP_URL"]
-    BROKER_POOL_LIMIT = 10
-    CELERY_RESULT_BACKEND = os.environ["REDISGREEN_URL"]
+# if DEBUG and not os.environ.get('ENVIRONMENT', False) == 'staging':
+#     BROKER_URL = "amqp://localhost"
+#     CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
+# else:
+#     BROKER_URL = os.environ["CLOUDAMQP_URL"]
+#     BROKER_POOL_LIMIT = 10
+#     CELERY_RESULT_BACKEND = os.environ["REDISGREEN_URL"]
 CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
 
 LOGIN_URL = "/users/sign_in/"
