@@ -48,6 +48,7 @@ PROJECT_APPS = (
     'thisishill',
     'me',
     'trailheadlane',
+    'users',
 )
 
 INSTALLED_APPS += PROJECT_APPS
@@ -235,3 +236,5 @@ else:
     BROKER_POOL_LIMIT = 10
     CELERY_RESULT_BACKEND = os.environ["REDISGREEN_URL"]
 CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+LOGIN_URL = "/users/sign_in/"

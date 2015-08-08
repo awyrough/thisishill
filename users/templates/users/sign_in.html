@@ -1,4 +1,4 @@
-{% load compressed %}
+{% load pipeline %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +11,8 @@
 
         <title>Sign in</title>
 
-        <!-- Bootstrap core CSS -->
-        {% compressed_css "bootstrap" %}
+        <!-- stylesheet core CSS -->
+        {% stylesheet "bootstrap" %}
 
         <!-- Custom styles for this template -->
         <link href="{{ STATIC_URL }}site/css/signin.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 
     <body>
         <div class="container">
-            {% include "messages.html" %}
+            {% include "thisishill/messages.html" %}
             <form class="form-horizontal form-signin" role="form" method="post" action="">
                 {% csrf_token %}
                 <h2 class="form-signin-heading">hill<span class="accent"></h2>
@@ -33,8 +33,8 @@
                 <input class="btn btn-lg btn-login" type="submit" value="Login">
             </form>
         </div> <!-- /container -->
-        {% compressed_js "jquery" %}
-        {% compressed_js "bootstrap" %}
+        {% javascript "jquery" %}
+        {% javascript "bootstrap" %}
         <script type="text/javascript" src="{{ STATIC_URL }}site/js/sign_in.js"></script>
     </body>
 </html>

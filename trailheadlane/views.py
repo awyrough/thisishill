@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.core.urlresolvers import resolve
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, permission_required
 
@@ -17,6 +18,7 @@ def about(request, td=None):
     return render(request, "trailheadlane/about.html", td)
 
 
+@login_required
 def trader(request, td=None):
     """
     Render Trailhead Lane Project Trader Page
@@ -25,6 +27,7 @@ def trader(request, td=None):
     return render(request, "trailheadlane/trader.html", td)
 
 
+@login_required
 def analyzer(request, td=None):
     """
     Render Trailhead Lane Project Analyzer Page

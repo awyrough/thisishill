@@ -1,0 +1,14 @@
+{% extends "thisishill/base.html" %}
+
+this is my website!
+
+{% load pipeline %}
+
+{% block js %}
+    {% javascript "d3" %}
+    <script src="{{ STATIC_URL }}site/js/d3r3sum3.js"></script>
+{% endblock js %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}site/css/d3r3sum3.css" />
+{% endblock css %}

@@ -9,8 +9,6 @@ admin.autodiscover()
 
 urlpatterns = patterns("",
                        url(r"^admin/", include(admin.site.urls)),
-                       url(r"^sign_in/$", "sign_in"),
-                       url(r"^sign_out/$", "sign_out"),
 
                        # main landing page / index
                        url(r"^$", "thisishill.views.landing", name="landing"),
@@ -25,6 +23,8 @@ urlpatterns = patterns("",
                        url(r"^api/v1/", include("api.urls")),
                        url(r"^api/", RedirectView.as_view(url="/api/v1/")),
 
+                       # Users
+                       url(r"^users/", include("users.urls")),
 
                        )
 
