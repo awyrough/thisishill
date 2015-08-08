@@ -1,0 +1,87 @@
+{% extends "thisishill/base.html" %}
+
+{% block content_fluid %}
+    <div class="intro-row">
+        <a class="btn btn-primary btn-lg">Trailhead Lane FX</a>
+    </div>
+    <div class="row top-row">
+
+        <div class="col-md-2">
+        
+        <div class="panel panel-input">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <span>Instrument</span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <select class="form-control select-instrument" data-placeholder="Select instrument:">
+                            <option></option>
+                            {% for instrument in instruments %}
+                            <option value="{{ instrument.pk }}">{{ instrument }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 panels-col">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-input">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <span>Initial Investment</span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <select class="form-control select-instrument" data-placeholder="Select instrument:">
+                            <option></option>
+                            {% for instrument in instruments %}
+                            <option value="{{ instrument.pk }}">{{ instrument }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 panels-col">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        </div>
+
+        <div class="col-md-6">
+
+        graph
+
+        </div>
+        <div class="col-md-4">
+
+        trades
+
+        </div>
+
+    </div>
+
+{% endblock content_fluid %}
+
+{% load pipeline %}
+
+{% block js %}
+    {% javascript "d3" %}
+    <script src="{{ STATIC_URL }}site/js/analyzer_trailheadlane.js"></script>
+{% endblock js %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}site/css/analyzer_trailheadlane.css" />
+{% endblock css %}

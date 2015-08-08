@@ -3,7 +3,7 @@ PIPELINE_ENABLED = False
 PIPELINE_CSS = {
     "bootstrap": {
         "source_filenames": (
-            "lib/bootstrap/css/bootstrap-darkly.min.css",
+            "lib/bootstrap/css/bootstrap.min.css",
         ),
         "output_filename": "pipeline/css/bootstrap.css",
     },

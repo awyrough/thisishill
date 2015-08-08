@@ -1,9 +1,13 @@
+.body {
+    font-family: 'Slabo', serif;
+}
+
 .footer {
   margin-bottom: 10px; }
 
 .copyright {
   font-size: 10px;
-  color: #ff0074;
+  color: #F16216;
   opacity: 0.7;
   top: 5px;
   right: 25px;

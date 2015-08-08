@@ -1,0 +1,28 @@
+{% extends "thisishill/base.html" %}
+
+{% block content %}
+    
+    <div class="jumbotron">
+        <div class="title">Trailhead Lane FX</div>
+        <div class="subtitle">Dag Seim and Hill Wyrough</div> 
+        <div class="col-md-12">
+            <div class="row enter-row">
+                <div class="col-md-12">
+                    <a class="btn btn-primary btn-lg enter-button" href="/projects/trailheadlane/analyzer/" role="button">Enter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% load pipeline %}
+
+{% block js %}
+    {% javascript "d3" %}
+    <script src="{{ STATIC_URL }}site/js/about_trailheadlane.js"></script>
+{% endblock js %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}site/css/about_trailheadlane.css" />
+{% endblock css %}

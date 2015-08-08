@@ -33,4 +33,4 @@ def analyzer(request, td=None):
     Render Trailhead Lane Project Analyzer Page
     """
     logger.info("Accessing Trailhead Lane Analyzer...")
-    return render(request, "trailheadlane/trader.html", td)
+    return render(request, "trailheadlane/analyzer.html", td)

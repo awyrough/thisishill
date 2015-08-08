@@ -1,0 +1,35 @@
+/* About box */
+.jumbotron {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 380px;
+  height: 300px;
+  padding: 15px;
+  margin: -100px -190px;
+  font-weight: 400;
+  background: #D3D3D3;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 50;
+    text-align: center;
+}
+
+.enter-row {
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+.enter-button {
+    margin-top: 50%;
+    width: 100%;
+}

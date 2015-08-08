@@ -1,0 +1,19 @@
+.body {
+    font-family: 'Slabo', serif;
+}
+
+.intro-row {
+    margin-top: 10px;
+}
+
+.top-row {
+    margin-top: 10px;
+}
+
+.panel-input {
+    border-color: #D3D3D3;
+}
+
+.panel-heading {
+    background-color: #D3D3D3;
+}
