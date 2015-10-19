@@ -1,0 +1,47 @@
+#siteTag {
+    /* positioning */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 5px;
+    
+    /* size and meta */
+    width: 200px;
+    height: 195px;
+    background:rgba(194,194,214,0.85);
+
+    /* inside */
+    text-align: left;
+    font-family: 'Slabo', sans-serif;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#siteTag .this-is-hill,
+#siteTag .short-for-hill {
+    color: #F16216;
+    margin-left: 5px;
+}
+
+#siteTag .this-is-hill {
+    font-size: 50px;
+    font-weight: 300px;
+}
+
+#siteTag .short-for-hill {
+    font-size: 15px;
+}
+
+#siteTag .bio,
+#siteTag .contact {
+    margin-left: 15px;
+    font-weight: 300px;
+}
+
+#siteTag .bio a,
+#siteTag .contact a {
+    color: #000000;
+}

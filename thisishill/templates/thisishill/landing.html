@@ -1,6 +1,30 @@
 {% extends "thisishill/base.html" %}
 
-this is my website!
+{% block content_fluid %}
+
+<div id="siteTag">
+    <div class="site-title">
+        <span class="this-is-hill">hill.</span><br/>
+        <span class="short-for-hill">(which is short for hill)</span>    
+    </div>
+    <hr>
+    <div class="bio">
+        <a href="http://www.predata.com">@predata</a>
+        <a href="https://github.com/awyrough">@github</a>
+        <a href="https://twitter.com/Hill_Wyrough">@twitter</a>
+        <a href="https://www.linkedin.com/pub/hill-wyrough/21/515/9b7">@linkedin</a>
+        <a href="https://www.google.com/maps/place/Nassau+Hall,+Princeton,+NJ+08542/@40.348707,-74.6615225,17z/data=!3m1!4b1!4m2!3m1!1s0x89c3e6c13ed26895:0x5bfdc3c0668af9e2">@princeton</a>
+        <a href="https://www.google.com/maps/place/Nassau+Hall,+Princeton,+NJ+08542/@40.348707,-74.6615225,17z/data=!3m1!4b1!4m2!3m1!1s0x89c3e6c13ed26895:0x5bfdc3c0668af9e2">@nyc</a>
+    </div>
+    <hr>
+    <div class="contact">
+        <div class="email-contact">
+            <a href="mailto:alexander.hill.wyrough@gmail.com">email me</a>
+        </div>
+    </div>
+</div>
+
+{% endblock content_fluid %}
 
 {% load pipeline %}
 
